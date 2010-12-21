@@ -22,6 +22,31 @@ ROMAN_NUMERALS = Array.new(3999) do |index|
         end
 end
 
+
+
+
+def is_roman(n)
+  if n =~ /^[I|V|C|X|M|D|L]+$/
+    return true
+  else
+    return false
+  end
+end
+
+
+def is_arabic(n)
+  if n =~ /^(\d)+$/
+    if (n.to_i) <=   3999
+      return true
+    else
+      return false
+    end
+  else
+    return false
+  end
+end
+
+
 #puts ROMAN_NUMERALS.inspect
 def to_roman(n)
    puts ROMAN_NUMERALS[n-1]
@@ -42,4 +67,6 @@ to_arabic("I")
 to_arabic("II")
 to_arabic("III")
 to_arabic("IV")
-
+puts "------------"
+puts is_arabic("3443")
+puts is_roman("VVV")
